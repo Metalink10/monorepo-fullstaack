@@ -52,18 +52,24 @@ router.post("/login", async (req, res) => {
     const userFilter = await prisma.user.findUnique({
       where: {
         email: user.email,
-        password: user.password,
+        password: user.hasPassword,
       },
       select: {
         name: true,
         email: true,
       },
     });
+    console.log(userFilter)
 
+    // Verifica se o usuário foi encontrado
     if(userFilter) {
-      // Verifica se o usuário foi encontrado
       console.log("Usuário encontrado", userFilter);
       res.status(200).json({ message: "Usuário encontrado", user: userFilter });
+      return;
+    }
+    // Se não for encontrado retorna uma mensagem
+    if(!userFilter) {
+      res.status(401).json({message: "Usuário ou senha inválidos", Error});
       return;
     }
 
@@ -76,7 +82,8 @@ router.post("/login", async (req, res) => {
     // res.setHeader("Authorization", `Bearer ${token}`);
     // res.json(token);
     // return;
-  } catch (error) {
+  } 
+  catch (error) {
     console.error("Erro ao buscar usuário", error);
     res.status(400).json({ message: "Problemas no servidor ao buscar dados" });
   }
