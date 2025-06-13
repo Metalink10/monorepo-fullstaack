@@ -1,12 +1,9 @@
 {
   "rewrites": [
+   
     {
-      "source": "/server.js/(.*)",     
-      "destination": "/server.js/$1"   
-    },
-    {
-      "source": "/teste-frontend(.*)",         
-      "destination": "/teste-frontend/$1" 
+      "source": "/server.js(.*)",         
+      "destination": "/server.js/$1" 
     }
   ],
   "headers": [
