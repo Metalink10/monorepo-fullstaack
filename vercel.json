@@ -2,11 +2,11 @@
  "rewrites": [
   {
     "source": "/api/(.*)", 
-    "destination": "/backend/express-prima/server.js"
+    "destination": "/server.js"
   },
   {
     "source": "/(.*)", 
-    "destination": "/frontend/$1" 
+    "destination": "/teste-frontend/$1" 
   }
 ],
   
