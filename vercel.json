@@ -5,8 +5,8 @@
       "destination": "/server.js/$1"   
     },
     {
-      "source": "/(.*)",         
-      "destination": "/frontend/$1" 
+      "source": "/teste-frontend(.*)",         
+      "destination": "/teste-frontend/$1" 
     }
   ],
   "headers": [
