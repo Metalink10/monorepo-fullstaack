@@ -7,6 +7,19 @@ import cors from "cors";
 const app = express();
 app.use(express.json());
 
+const apiRouter = express.Router()
+apiRouter.get('/users', (req, res) => {
+  res.json({ message: 'Lista de usuários da API!' });
+});
+
+apiRouter.post('/products', (req, res) => {
+  const newProduct = req.body;
+  res.status(201).json({ message: 'Produto criado!', product: newProduct });
+});
+
+// Anexa o router da API ao aplicativo Express com o prefixo '/api'
+app.use('/api', apiRouter)
+
 app.use(cors({
   origin: "*",
   methods: ["GET", "POST", "PUT", "DELETE"],
