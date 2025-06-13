@@ -1,12 +1,12 @@
 {
   "rewrites": [
     {
-      "source": "/api/(.*)",     
-      "destination": "/api/$1"   
+      "source": "/teste-frontend/src/App.jsx(.*)",     
+      "destination": "/teste-frontend/src/App.jsx$1"   
     },
     {
       "source": "/(.*)",         
-      "destination": "/frontend/$1" 
+      "destination": "/teste-frontend/src/App.jsx/$1" 
     }
   ],
   "headers": [
