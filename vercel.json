@@ -6,6 +6,7 @@
       "destination": "/server.js/$1" 
     }
   ],
+  
   "headers": [
     {
       "source": "/(.*)",
