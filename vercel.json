@@ -1,11 +1,14 @@
 {
-  "rewrites": [
-   
-    {
-      "source": "/server.js(.*)",         
-      "destination": "/server.js/$1" 
-    }
-  ],
+ "rewrites": [
+  {
+    "source": "/api/(.*)", 
+    "destination": "/backend/express-prima/server.js"
+  },
+  {
+    "source": "/(.*)", 
+    "destination": "/frontend/$1" 
+  }
+],
   
   "headers": [
     {
@@ -20,9 +23,11 @@
   ],
   "functions": {
     "backend/express-prima/server.js": { 
-      "runtime": "nodejs@22.x"
+      "runtime": "nodejs20.x"
     }
   },
+  "installCommand": "npm install --prefix=./frontend && npm install --prefix=./backend", 
   "buildCommand": "npm run build --prefix frontend",
-  "outputDirectory": "frontend/build" 
+  "outputDirectory": "frontend/build"
 }
+  
