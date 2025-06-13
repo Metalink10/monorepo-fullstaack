@@ -1,17 +1,18 @@
 {
   "rewrites": [
     {
-      "source": "/teste-frontend/src/App.jsx(.*)",     
-      "destination": "/teste-frontend/src/App.jsx$1"   
+
+      "source": "/App.jsx/(.*)",     
+      "destination": "/App.jsx/$1"   
     },
     {
       "source": "/(.*)",         
-      "destination": "/teste-frontend/src/App.jsx/$1" 
+      "destination": "/$1" 
     }
   ],
   "headers": [
     {
-      "source": "/api/(.*)",
+      "source": "/express-prisma/(.*)",
       "headers": [
         { "key": "Access-Control-Allow-Credentials", "value": "true" },
         { "key": "Access-Control-Allow-Origin", "value": "*" },
@@ -21,7 +22,7 @@
     }
   ],
   "functions": {
-    "backend/api/index.js": { 
+    "backend/express-prima/server.js": { 
       "runtime": "@vercel/node@20.x"
     }
   },
