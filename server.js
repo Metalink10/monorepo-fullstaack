@@ -34,6 +34,4 @@ app.use(auth);
 app.use("/", router);
 app.use("/", privateRoutes);
 
-app.listen(3000, () => {
-  console.log("servidor rodando");
-});
+export default app;
