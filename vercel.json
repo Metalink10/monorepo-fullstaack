@@ -23,7 +23,7 @@
   ],
   "functions": {
     "server.js": { 
-      "runtime": "nodejs20.x"
+      "runtime": "20.x"
     }
   },
   "installCommand": "npm install --prefix=./teste-frontend && npm install ", 
