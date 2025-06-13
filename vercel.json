@@ -1,15 +1,5 @@
 {
-  "rewrites": [
-    {
-
-      "source": "/App.jsx/(.*)",     
-      "destination": "/App.jsx/$1"   
-    },
-    {
-      "source": "/(.*)",         
-      "destination": "/$1" 
-    }
-  ],
+  
   "headers": [
     {
       "source": "/express-prisma/(.*)",
